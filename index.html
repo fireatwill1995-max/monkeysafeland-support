@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Support — Monkey Safe Land</title>
+    <style>
+        :root {
+            --bg: #081017;
+            --panel: #12202a;
+            --panel-border: #2d4757;
+            --text: #eff8ef;
+            --muted: #c0d3c8;
+            --accent: #8bd0b0;
+            --accent-strong: #ffd36b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top, rgba(139, 208, 176, 0.18), transparent 35%),
+                linear-gradient(180deg, #081017 0%, #12202a 100%);
+            min-height: 100vh;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        .note {
+            font-size: 0.85rem;
+            color: var(--accent-strong);
+            border: 1px dashed var(--accent-strong);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-bottom: 20px;
+        }
+
+        header { margin-bottom: 32px; }
+        header h1 { font-size: 2rem; margin-bottom: 4px; }
+        header p { color: var(--muted); font-size: 0.95rem; }
+
+        section {
+            background: rgba(18, 32, 42, 0.92);
+            border: 1px solid var(--panel-border);
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 1.15rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        h3 {
+            font-size: 1rem;
+            color: var(--text);
+            margin: 16px 0 8px;
+        }
+
+        p, li {
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 4px; }
+
+        code {
+            padding: 2px 7px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text);
+            font-size: 0.92em;
+        }
+
+        kbd {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.9em;
+        }
+
+        .placeholder {
+            color: var(--accent-strong);
+            font-weight: 700;
+        }
+
+        details {
+            margin-bottom: 10px;
+        }
+
+        details summary {
+            cursor: pointer;
+            color: var(--text);
+            font-weight: 600;
+            padding: 6px 0;
+        }
+
+        details[open] summary {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.8rem;
+            margin-top: 40px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="note">
+            This support page is hosted at <a href="https://fireatwill1995-max.github.io/monkeysafeland-support/" style="color: var(--accent);">fireatwill1995-max.github.io/monkeysafeland-support/</a>
+        </div>
+
+        <header>
+            <h1>Monkey Safe Land — Support</h1>
+            <p>Help and troubleshooting for the Meta Quest build</p>
+        </header>
+
+        <!-- ─── Getting Started ─── -->
+        <section>
+            <h2>Getting Started</h2>
+            <p>Monkey Safe Land is a VR action game for Meta Quest. The current build supports solo play and direct host/join multiplayer over your local network.</p>
+
+            <h3>Installation</h3>
+            <ol>
+                <li>Enable Developer Mode on your Quest headset (Settings &rarr; System &rarr; Developer).</li>
+                <li>Connect your headset to your PC via USB-C.</li>
+                <li>Accept the USB debugging prompt on the headset.</li>
+                <li>Install using SideQuest, or run:
+                    <br><code>adb install -r MonkeySafeLand_Quest_TestBuild.apk</code></li>
+                <li>Launch the app from your Quest library under <strong>Unknown Sources</strong>.</li>
+            </ol>
+
+            <h3>Controls</h3>
+            <ul>
+                <li><kbd>Left Stick</kbd> &mdash; Move</li>
+                <li><kbd>Right Stick</kbd> &mdash; Snap turn</li>
+                <li><kbd>Grip</kbd> &mdash; Sprint</li>
+                <li><kbd>A</kbd> &mdash; Start / Ready / Jump</li>
+                <li><kbd>X</kbd> &mdash; Host a multiplayer session</li>
+                <li><kbd>B</kbd> &mdash; Join / Disconnect</li>
+                <li><kbd>Y</kbd> &mdash; Edit join IP address</li>
+            </ul>
+        </section>
+
+        <!-- ─── Solo Play ─── -->
+        <section>
+            <h2>Solo Play</h2>
+            <ol>
+                <li>Launch the app.</li>
+                <li>Press <kbd>A</kbd> to start a solo run.</li>
+                <li>Collect objective pickups while avoiding the Shriek hunter.</li>
+                <li>Complete the round before time runs out or your health reaches zero.</li>
+            </ol>
+            <p>Solo play does not require a network connection.</p>
+        </section>
+
+        <!-- ─── Multiplayer ─── -->
+        <section>
+            <h2>Multiplayer Setup</h2>
+            <p>The current build uses direct host/join networking. Both headsets must be on the same local network.</p>
+
+            <h3>Hosting</h3>
+            <ol>
+                <li>Press <kbd>X</kbd> to host. Your IP and port will appear on screen.</li>
+                <li>Share the displayed IP with the joining player.</li>
+                <li>Wait for the other player to join and ready up.</li>
+                <li>Press <kbd>A</kbd> to launch the match once all players are ready.</li>
+            </ol>
+
+            <h3>Joining</h3>
+            <ol>
+                <li>Press <kbd>Y</kbd> to open the join-IP editor.</li>
+                <li>Enter the host's IP address. The default port is <code>27015</code>.</li>
+                <li>Press <kbd>B</kbd> to connect.</li>
+                <li>Press <kbd>A</kbd> to ready up.</li>
+            </ol>
+        </section>
+
+        <!-- ─── FAQ / Troubleshooting ─── -->
+        <section>
+            <h2>Troubleshooting</h2>
+
+            <details>
+                <summary>The app does not appear on my Quest</summary>
+                <p>After sideloading, the app appears under <strong>Unknown Sources</strong> in your Quest library, not in the main app list. Make sure Developer Mode is enabled.</p>
+            </details>
+
+            <details>
+                <summary>adb install fails or the headset is not detected</summary>
+                <ul>
+                    <li>Reconnect the USB-C cable and look for the USB debugging prompt on the headset.</li>
+                    <li>Try a different USB port or cable.</li>
+                    <li>If using wireless adb, pair over USB first, then switch to tcpip mode with <code>adb tcpip 5555</code>.</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Cannot join a multiplayer session</summary>
+                <ul>
+                    <li>Confirm both headsets are on the same Wi-Fi network.</li>
+                    <li>Double-check the host IP shown on the host headset.</li>
+                    <li>Make sure no firewall is blocking port <code>27015</code> (or the port shown by the host).</li>
+                    <li>If using different subnets (e.g., guest vs. main Wi-Fi), move both devices to the same network.</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Performance feels low or the app stutters</summary>
+                <ul>
+                    <li>Close other running apps on the headset.</li>
+                    <li>Try lowering the in-game graphics quality or target FPS in the settings menu.</li>
+                    <li>Restart the headset if it has been running for a long session.</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>My profile or progress was lost</summary>
+                <p>Profile data is stored locally on the headset. Uninstalling or clearing the app's data will remove your saved profile. There is no cloud backup in this build.</p>
+            </details>
+        </section>
+
+        <!-- ─── Game Modes ─── -->
+        <section>
+            <h2>Game Modes</h2>
+            <ul>
+                <li><strong>Tag</strong> — Fast-paced chase mode. Evade the Shriek and survive the round.</li>
+                <li><strong>Hide &amp; Seek</strong> — Use map cover to stay hidden from the hunter.</li>
+                <li><strong>Battle Royale</strong> — Compete under increasing zone pressure until one player remains.</li>
+                <li><strong>Horror</strong> — Darker atmosphere, denser fog, and a more aggressive Shriek.</li>
+            </ul>
+        </section>
+
+        <!-- ─── Maps ─── -->
+        <section>
+            <h2>Available Maps</h2>
+            <ul>
+                <li>Jungle Canopy</li>
+                <li>Jungle Ruins</li>
+                <li>Volcanic Island</li>
+                <li>Abandoned Facility</li>
+                <li>Snowbound Village</li>
+            </ul>
+        </section>
+
+        <!-- ─── Known Limitations ─── -->
+        <section>
+            <h2>Known Limitations (Current Build)</h2>
+            <ul>
+                <li>Multiplayer is direct host/join only — no platform matchmaking or relay servers.</li>
+                <li>Voice chat and free text chat are not included.</li>
+                <li>Profile data is local only with no cloud sync.</li>
+                <li>The package name <code>com.yourstudio.monkeysafeland</code> is a development placeholder.</li>
+            </ul>
+        </section>
+
+        <!-- ─── Contact ─── -->
+        <section>
+            <h2>Contact Us</h2>
+            <p>For bug reports, questions, or feedback:</p>
+            <p>Email: fireatwill1995@gmail.com</p>
+            <p>Website: <a href="https://fireatwill1995-max.github.io/monkeysafeland-support/" style="color: var(--accent);">https://fireatwill1995-max.github.io/monkeysafeland-support/</a></p>
+            <p>Privacy Policy: <a href="https://fireatwill1995-max.github.io/monkeysafeland-support/privacy-policy.html" style="color: var(--accent);">View Privacy Policy</a></p>
+        </section>
+
+        <footer>
+            &copy; 2026 FireWill Studios. All rights reserved.
+        </footer>
+    </main>
+</body>
+</html>
